@@ -20,7 +20,7 @@ function Nav() {
           return {
             key,
             label: "Home",
-          }}
+          }} 
           else{
             return {
                 key,
