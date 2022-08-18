@@ -1,6 +1,5 @@
-import React from 'react';
-
-
+import React from 'react'
+import './content.css'
 import './App.css';
 import Home from './Components/Home';
 
