@@ -13,6 +13,7 @@ function Home() {
     <Header>
       <div className="logo" />
       <Nav />
+      
     </Header>
     <Content>
        <Card />
