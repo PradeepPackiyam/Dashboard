@@ -29,6 +29,7 @@ const Cards = () => {
     hoverable
     style={{
       width: 300,
+      borderRadius:30
     }}
     cover={<img alt="example" src="https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg" />}
   >
@@ -46,6 +47,8 @@ const Cards = () => {
     hoverable
     style={{
       width: 300,
+      borderRadius:30
+
     }}
     cover={<img alt="example"  src="https://gw.alipayobjects.com/zos/antfincdn/aPkFc8Sj7n/method-draw-image.svg"  />}
   >
@@ -62,6 +65,8 @@ const Cards = () => {
     hoverable
     style={{
       width: 300,
+      borderRadius:30
+
     }}
     cover={<img alt="example" src="https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg"  />}
   >
@@ -78,6 +83,8 @@ const Cards = () => {
     hoverable
     style={{
       width: 300,
+      borderRadius:30
+
     }}
     cover={<img alt="example"  src="https://gw.alipayobjects.com/zos/antfincdn/aPkFc8Sj7n/method-draw-image.svg" />}
   >
