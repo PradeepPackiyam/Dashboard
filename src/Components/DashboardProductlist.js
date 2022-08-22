@@ -5,10 +5,14 @@ import "antd/dist/antd.css";
 import Dashboardnav from './Dashboardnav'
 import Dashboardsider from './Dashboardsider';
 import Productslist from './Productslist';
+
 const { Header,Content, Sider } = Layout;
-function Dashboardpage() {
+
+
+function DashboardProductlist() {
   return (
-    <div><Layout className="layout"> 
+    <div>
+        <Layout className="layout"> 
     <Header>
       <div className="logo" />
       
@@ -20,19 +24,13 @@ function Dashboardpage() {
       <Dashboardsider />
     </Sider>
     </Layout>
-    <Layout style={{
-          padding: '0 150px 70px',
-        }}>
-    <Content  className="site-layout-background"
-          style={{
-            padding: 24,
-            margin: 0,
-            minHeight: 280,
-          }}>
-      <Productslist /> 
+    <Layout>
+    <Content>
+       <Productslist />
     </Content>
-    </Layout></div>
+    </Layout>
+    </div>
   )
 }
 
-export default Dashboardpage
+export default DashboardProductlist
