@@ -20,7 +20,7 @@ function Dashboardsider() {
         <Layout>
         <Sider width={200} className="site-layout-background">
         
-            <Menu theme="dark"  mode="inline"  style={{ height: '100%', borderRight: 0 }}>
+            <Menu theme="dark"  mode="inline"  style={{ height:800, borderRight: 0 }}>
                             <Menu.Item key="1">
                             <UnorderedListOutlined />
                                 <span> ProductsList</span>
