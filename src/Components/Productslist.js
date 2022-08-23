@@ -91,15 +91,16 @@ function Productslist() {
           title: 'colors',
           dataIndex: 'colors',
           
-          render: (id, productlists) => {
-            console.log('t',productlists.id);
-            
-            (productlists.colors).map((d) => {
-              console.log('d',d);
-            return ( 
-          <BorderOutlined style={{ color:productcolors[d] }}  key={d.id} />
-             )} );
-          }
+          render: (id, productlists) =>  (
+            <>
+              {productlists.colors.map(color => {
+         
+                return (
+                  <BorderOutlined style={{ color:productcolors[color] }}  key={color} />
+                );
+              })}
+            </>
+          ),
         },
         {
           key: '4',

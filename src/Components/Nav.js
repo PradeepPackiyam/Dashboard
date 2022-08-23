@@ -18,7 +18,7 @@ function Nav() {
       <Menu
         theme="dark"
         mode="horizontal"
-        defaultSelectedKeys={['1']}
+       
         items={new Array(2).fill(null).map((_, index) => {
           const key = index + 1;
           if ( key ===1) {
