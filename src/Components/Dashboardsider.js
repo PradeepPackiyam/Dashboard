@@ -1,7 +1,9 @@
 import { UnorderedListOutlined, PlusCircleOutlined } from '@ant-design/icons';
 
 import React from 'react'
-import { Layout, Menu,  Modal,Row,Col  } from 'antd';
+
+import { Layout, Menu,  Modal , Row, Col } from 'antd';
+
 
 import "antd/dist/antd.css";
 
@@ -40,10 +42,12 @@ function Dashboardsider() {
 
     
     <div>
+
         <Row >
         <Col flex={2}>
         <Layout  >
         <Sider width={200}  >
+
         
             <Menu theme="dark" defaultSelectedKeys={['1']}  mode="inline"  style={{ height:550}}>
                             <Menu.Item key="1">
@@ -60,6 +64,7 @@ function Dashboardsider() {
 
 
                                 <Modal
+
         visible={visible}
         title="New User"
         onCancel={handleCancel}
@@ -73,6 +78,7 @@ function Dashboardsider() {
         </Modal>
          </Menu.Item>
          </Menu>
+
                         
         
       </Sider>
