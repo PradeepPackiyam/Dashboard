@@ -1,11 +1,12 @@
 import React from 'react'
-import './content.css'
-import './App.css';
+import './full.css'
+import './home.css'
+import './table.css'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from './Components/Home';
 import Login from './Components/Login';
 import Dashboardpage from './Components/Dashboardpage';
-
+import './App.css';
 
 
 function App() {
