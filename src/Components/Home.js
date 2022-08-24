@@ -9,15 +9,16 @@ const { Header } = Layout;
 function Home() {
   return (
     
-    <div><Layout className="layout"> 
+    <div ><Layout> 
     <Header>
       <div className="logo" />
       <Nav />
       
     </Header>
-    <Content>
+    <Content className='home' style={{paddingBottom:300}}>
        <Card />
     </Content>
+    
     </Layout>
        </div>
   )

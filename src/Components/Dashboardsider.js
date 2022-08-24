@@ -1,7 +1,9 @@
 import { UnorderedListOutlined, PlusCircleOutlined } from '@ant-design/icons';
 
 import React from 'react'
+
 import { Layout, Menu,  Modal , Row, Col } from 'antd';
+
 
 import "antd/dist/antd.css";
 
@@ -13,19 +15,26 @@ import { useState } from 'react'
 const { Sider } = Layout;
 function Dashboardsider() {
     
-    const [isModalVisible, setIsModalVisible] = useState();
+ 
+    const [visible, setVisible] = useState();
    
  
 
     const showModalAdd = () => {
-        setIsModalVisible(true);
+        setVisible(true);
       };
       const handleOk = () => {
-        setIsModalVisible(false);
+        setVisible(false);
       }
       const handleCancel = () => {
-        setIsModalVisible(false);
+        setVisible(false);
       }
+
+      const showModal = () => {
+        setVisible(true);
+      };
+
+
 
     return (
 
@@ -33,16 +42,14 @@ function Dashboardsider() {
 
     
     <div>
-      <Row >
+
+        <Row >
         <Col flex={2}>
+        <Layout  >
+        <Sider width={200}  >
 
-
-
-      
-        <Layout>
-        <Sider width={200} className="site-layout-background">
         
-            <Menu theme="dark" defaultSelectedKeys={['1']}  mode="inline"  style={{ height:800, borderRight: 0 }}>
+            <Menu theme="dark" defaultSelectedKeys={['1']}  mode="inline"  style={{ height:550}}>
                             <Menu.Item key="1">
                             <UnorderedListOutlined />
                                 <span> ProductsList</span>
@@ -50,19 +57,28 @@ function Dashboardsider() {
 
                           
                             </Menu.Item>
-                            <Menu.Item key="2"  onClick={showModalAdd}>
+                            <Menu.Item key="2"  onClick={showModal}>
                             <PlusCircleOutlined />
                                 <span> Add Product</span>
-                                <Modal
-          title="Modal"
-          visible={isModalVisible}
-          onOk={handleOk}
-          onCancel={handleCancel}
-          > 
-           </Modal>
 
-                            </Menu.Item>
-                        </Menu>
+
+
+                                <Modal
+
+        visible={visible}
+        title="New User"
+        onCancel={handleCancel}
+        footer={[
+        ]}> <Addproductform   onClick={showModalAdd}  /> 
+
+
+
+        
+        
+        </Modal>
+         </Menu.Item>
+         </Menu>
+
                         
         
       </Sider>

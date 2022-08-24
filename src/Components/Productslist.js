@@ -1,5 +1,10 @@
 import React from 'react'
-import { ReadOutlined, BorderOutlined } from '@ant-design/icons';
+
+import { ReadOutlined, BorderOutlined} from '@ant-design/icons';
+import {useState} from "react";
+import "antd/dist/antd.css";
+import { Button, Table,Layout,Row,Col } from "antd";
+
 
 import "antd/dist/antd.css";
 import { Button, Table, Layout } from "antd";
@@ -77,32 +82,39 @@ function Productslist() {
 
   return (
     <div>
-     
-    
-      <Layout>
-        <Content className="site-layout-background"
+
+      
+         <Row >
+         <Col flex={3}>
+        <Layout >
+            <Content   
           style={{
             padding: 24,
-            marginTop: -820,
-            marginLeft: 30,
-
+            marginTop: -580,
+            marginLeft:30
+            
           }}>
-          <Table columns={columns} dataSource={productlists} bordered
-            summary={() => (
-              <Table.Summary fixed>
-                <Table.Summary.Row>
-                  <Table.Summary.Cell index={1}></Table.Summary.Cell>
-                  <Table.Summary.Cell index={1}></Table.Summary.Cell>
-                </Table.Summary.Row>
-              </Table.Summary>
-            )}
-          />
-        </Content>
+           
+        <Table columns={columns} dataSource={productlists} bordered
+      summary={() => (
+        <Table.Summary fixed>
+          <Table.Summary.Row >
+            <Table.Summary.Cell index={1}></Table.Summary.Cell>
+            <Table.Summary.Cell index={1}></Table.Summary.Cell>
+          </Table.Summary.Row>
+        </Table.Summary>
+      )}
+      />
+      
+      </Content>
       </Layout>
-     
-     
+      </Col>
+      </Row>
+
     </div>
+   
   )
 }
+
 
 export default Productslist

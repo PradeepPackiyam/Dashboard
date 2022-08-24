@@ -15,39 +15,39 @@ function Addproductform() {
       const [form] = Form.useForm();
   return (
     <div>
-        
+        <>
           <Form form={form} onFinish={onFinish}
-            name="useform"
+            name="useform"  
           >
             <Form.Item label="id" name="id"   >
               <Input placeholder="id" required></Input>
 
             </Form.Item>
-            <Form.Item label="email" name="email" >
-              <Input placeholder="email" required></Input>
+            <Form.Item label="productname" name="productname" >
+              <Input placeholder="productname" required></Input>
 
             </Form.Item>
-            <Form.Item label="first_name" name="first_name" >
-              <Input placeholder="first_name" required></Input>
+            <Form.Item label="colors" name="colors" >
+              <Input placeholder="colors" required></Input>
 
             </Form.Item>
-            <Form.Item label="last_name" name="last_name" >
-              <Input placeholder="last_name" required></Input>
+            <Form.Item label="description" name="description" >
+              <Input placeholder="description" required></Input>
 
             </Form.Item>
-            <Form.Item label="avatar" name="avatar" >
-              <Input placeholder="img_url" required></Input> 
+            <Form.Item label="productDetails" name="productdetails" >
+              <Input placeholder="productdetails" required></Input> 
 
             </Form.Item>
             <Form.Item  >
-              <Button block type="link"  >Fill Form</Button>
+             
               <Button block type="primary" htmlType="onChange"  onClick={() => message.success('Processing complete!')} >Submit</Button>
-              <Button block type="primary"  >Reset</Button>
+             
 
 
             </Form.Item>
           </Form>
-        
+          </>
 
     </div>
   )

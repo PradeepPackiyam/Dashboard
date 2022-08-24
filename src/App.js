@@ -1,16 +1,19 @@
 import React from 'react'
-import './content.css'
-import './App.css';
+import './full.css'
+import './home.css'
+import './table.css'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { createContext } from 'react';
 import Home from './Components/Home';
 import Login from './Components/Login';
 import Dashboardpage from './Components/Dashboardpage';
+
 import Productsdetails from './Components/Productsdetails';
 import { useState } from "react";
 import { Col, Row } from 'antd';
 
 export const ProductContext = createContext();
+
 function App() {
   
   const [ productcolors, setProductcolors] = useState(['#0088FE', '#00C49F', '#FFBB28', '#FF8042']);
