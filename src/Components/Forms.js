@@ -2,7 +2,7 @@ import { Button, Form, Input } from 'antd';
 import "antd/dist/antd.css";
 import   Icon,{ UserOutlined } from '@ant-design/icons'
 import { useNavigate } from "react-router-dom";
-
+import { Row,Col } from 'antd';
 import React from 'react'
 
 
@@ -21,8 +21,15 @@ function Forms() {
     
     <div >
       <div>
-        
-      <UserOutlined style={{fontSize:'xx-large',marginTop:80,backgroundColor:"beige",borderRadius:50,padding:20,marginLeft:120}} /><h2 style={{marginLeft:120}}>Login</h2>
+      <Row>
+      <Col span={8}></Col>
+      <Col span={8}> <UserOutlined style={{fontSize:'xx-large',marginTop:80,backgroundColor:"beige",borderRadius:50,padding:20,marginLeft:120}} > </UserOutlined> <h1   style={{marginLeft:120}}>LOGIN</h1></Col>
+      <Col span={8}></Col>
+
+      
+    </Row>  
+ 
+     
       
       <Form style={{paddingTop:80,marginBottom:'100%'}}
       name="basic"
@@ -53,12 +60,19 @@ function Forms() {
         <Input.Password   placeholder="enter your password"  style={{borderRadius:30,fontSize:'x-large'}}/>
       </Form.Item>
 
-     
-      <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
-        <Button type="primary" htmlType="submit" style={{borderRadius:20}}>
+      <Row>
+      <Col span={8}></Col>
+      <Col span={8}> <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
+        <Button  htmlType="submit" style={{borderRadius:20,color:"white", backgroundColor:'#15191d', marginLeft:20}}>
          Login to Dashboard 
         </Button>
       </Form.Item>
+      </Col>
+      <Col span={8}></Col>
+
+      
+    </Row>  
+      
     </Form>  
     
     </div>

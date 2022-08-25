@@ -9,6 +9,7 @@ import Login from './Components/Login';
 import Dashboardpage from './Components/Dashboardpage';
 
 import Productsdetails from './Components/Productsdetails';
+import Addproductpage from './Components/Addproductpage';
 import { useState } from "react";
 import { Col, Row } from 'antd';
 
@@ -19,14 +20,14 @@ function App() {
   const [ productcolors, setProductcolors] = useState(['#0088FE', '#00C49F', '#FFBB28', '#FF8042']);
   const [productlists, setProductLists] = useState([
     {
-      id: 1,
+      id: "1",
       productname: "Adidas Running Shoes",
-      price: 8999,
+      price: "8999",
       description: "Fluo Adidas Running Shoes For Men.Great Everyday Shoes For Runners To Go That Extra Mile. ",
-      colors: [1, 0, 2],
+      colors: ['1','0', '2'],
       category: "men",
       status: "available",
-      quantity: 10
+      quantity: "10"
     },
     {
       id: 2,
@@ -90,6 +91,7 @@ function App() {
           <Route exact path='/login' element={<Login />}></Route>
           <Route exact path='/dashboardpage' element={<Dashboardpage />}></Route>
           <Route exact path='/productsdetails/:id' element={<Productsdetails />}></Route>
+          <Route exact path='/addproductpage' element={<Addproductpage />}></Route>
         </Routes>
 
 

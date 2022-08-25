@@ -22,6 +22,9 @@ function Dashboardnav() {
           return {
             key,
             label: "DashBoard",
+            onClick: () => {
+              navigate("/dashboardpage");
+            }
             
             
           }} 
