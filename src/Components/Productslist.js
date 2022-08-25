@@ -1,13 +1,7 @@
 import React from 'react'
-
-import { ReadOutlined, BorderOutlined} from '@ant-design/icons';
-import {useState} from "react";
+import { ReadOutlined, BorderOutlined,CloudFilled} from '@ant-design/icons';
 import "antd/dist/antd.css";
 import { Button, Table,Layout,Row,Col } from "antd";
-
-
-import "antd/dist/antd.css";
-import { Button, Table, Layout } from "antd";
 import { Link } from "react-router-dom";
 import { useContext } from 'react'
 import { ProductContext } from '../App';
@@ -33,8 +27,8 @@ function Productslist() {
     },
     {
       key: '2',
-      title: 'productname',
-      dataIndex: 'productname',
+      title: 'price',
+      dataIndex: 'price',
 
     },
 
@@ -48,7 +42,9 @@ function Productslist() {
           {productlists.colors.map(color => {
 
             return (
-              <BorderOutlined style={{ color: productcolors[color] }} key={color} />
+             
+           
+              <CloudFilled style={{ color: productcolors[color] }} key={color} />
             );
           })}
         </>
@@ -84,16 +80,11 @@ function Productslist() {
     <div>
 
       
-         <Row >
-         <Col flex={3}>
+         
         <Layout >
             <Content   
-          style={{
-            padding: 24,
-            marginTop: -580,
-            marginLeft:30
-            
-          }}>
+              
+         >
            
         <Table columns={columns} dataSource={productlists} bordered
       summary={() => (
@@ -108,8 +99,7 @@ function Productslist() {
       
       </Content>
       </Layout>
-      </Col>
-      </Row>
+      
 
     </div>
    

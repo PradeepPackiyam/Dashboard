@@ -1,5 +1,5 @@
 import { Layout,Menu } from 'antd';
-import { ReadOutlined, BorderOutlined } from '@ant-design/icons';
+import { ReadOutlined, BorderOutlined, CloudFilled } from '@ant-design/icons';
 import React from 'react'
 import { Button, Table } from "antd";
 import { useContext } from 'react'
@@ -20,7 +20,7 @@ function Productsdetails() {
     const {id} = useParams();
   
     
-      console.log(productlists[id])
+      console.log("id product",productlists[id])
 
 const singleproduct =productlists[id-1];
 
@@ -124,7 +124,7 @@ console.log("ddd", singleproduct)
           singleproduct.colors.map(color => {
                 console.log("rrrr", color)
             return (
-                    <BorderOutlined style={{ color: productcolors[color] }} key={color} />
+                    <CloudFilled style={{ color: productcolors[color] }} key={color} />
                      );
                     })}
                         

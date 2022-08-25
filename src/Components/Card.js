@@ -18,9 +18,14 @@ const Cards = () => {
   return (
 
     <div className='content'>
-    
-<h1 style={{marginTop:100,marginBottom:-100,fontFamily:'verdana',fontSize:"50px"}}>Our Offers Below!</h1>
+      <Row>
+      <Col span={8}></Col>
+      <Col span={8}><h1 style={{fontFamily:'verdana',fontSize:"50px"}} >Our Offers Below!</h1></Col>
+      <Col span={8}></Col>
 
+      
+    </Row>  
+    
 
 
 <Content>
