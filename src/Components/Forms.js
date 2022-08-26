@@ -48,9 +48,11 @@ function Forms() {
       {type: "email", message: 'Please input your mail'}]}
       hasFeedback
       >
-        <Input placeholder="enter your email"  style={{borderRadius:30,fontSize:'x-large'}}/>
+        <Input placeholder="enter your email"  style={{borderRadius:30,fontSize:'x-large',width:'320px'}}/>
       </Form.Item>
-
+<Row>
+<Col span={6}></Col>
+<Col span={6}>
       <Form.Item
         label="Password"
         name="password"
@@ -68,13 +70,17 @@ function Forms() {
         
         hasFeedback
         >
-          
-        <Input.Password   placeholder="enter your password"  style={{borderRadius:30,fontSize:'x-large'}}/>
+
+        <Input.Password   placeholder="enter your password"  style={{borderRadius:30,fontSize:'x-large',width:'320px'}}/>
+
       </Form.Item>
+      </Col>
+      </Row>
+
 
       <Row>
-      <Col span={8}></Col>
-      <Col span={8}> <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
+      <Col span={6}></Col>
+      <Col span={10}> <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
         <Button  htmlType="submit" style={{borderRadius:20,color:"white", backgroundColor:'#15191d', marginLeft:20}}>
          Login to Dashboard 
         </Button>

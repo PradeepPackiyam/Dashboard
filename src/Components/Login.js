@@ -1,5 +1,5 @@
 import React from 'react'
-import { Layout, Col, Row  } from 'antd';
+import { Layout, Col, Row, Card  } from 'antd';
 import Forms from './Forms';
 import Nav from './Nav';
 
@@ -11,13 +11,16 @@ function Login() {
     
     <div><Layout className="layout"> 
     <Header>
-      <div className="logo" />
+     
       <Nav />
      </Header>
-    <Content className='full'>
-    <Row>
-      <Col span={8}></Col>
-      <Col span={6}> <Forms />
+
+    <Content className='home'>
+    <Row justify="space-justify"  >
+      
+      <Col span={12} offset={6}>  
+        <Forms />
+        
 </Col>
 
       

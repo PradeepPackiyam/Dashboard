@@ -9,7 +9,7 @@ import { Col, Row } from 'antd';
 const { Header,Content } = Layout;
 function Addproductpage() {
   return (
-    <div>
+    <div >
         
         
     <Layout className="layout"> 

@@ -15,7 +15,7 @@ function Home() {
       <Nav />
       
     </Header>
-    <Content className='home' style={{paddingBottom:300}}>
+    <Content className='home' style={{paddingBottom:110}}>
        <Card />
     </Content>
     

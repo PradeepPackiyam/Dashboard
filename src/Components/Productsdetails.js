@@ -8,7 +8,7 @@ import Dashboardnav from './Dashboardnav';
 import { Link } from "react-router-dom";
 import { ProductContext } from '../App';
 import { useNavigate } from "react-router-dom";
-import { Col, Row } from 'antd';
+import { Col, Row,Card } from 'antd';
 
 const { Header,Content } = Layout;
 
@@ -30,7 +30,7 @@ console.log("ddd", singleproduct)
 
   return (
    
-<Layout>
+<Layout >
 <Header>
 
       <Menu
@@ -66,61 +66,51 @@ console.log("ddd", singleproduct)
   
     </Header>
     
-  
-        <Content className="site-layout-background">
-
-         <Row>
+        <Content className='home' >
+        <Row>
       <Col span={8}></Col>
-      <Col span={8}><h1>PRODUCT DETAILS</h1></Col>
+      <Col span={8}><h1 style={{fontFamily:'verdana',fontSize:"xxx-large",color:'white',marginTop:'50px',backgroundColor:'rgb(0,21,41)',borderRadius:30,textAlign:'center'}} >Product Details</h1></Col>
       <Col span={8}></Col>
-
-      
     </Row>  
-    <Row>
+
+<Card style={{borderRadius:50,margin:'110px'}}>
+    <Row style={{backgroundColor:'aliceblue',fontSize:'large'}}>
     <Col span={4}></Col>
-      <Col span={5}><h3>ID </h3></Col>
-      <Col span={4}><h3>:</h3></Col>
+      <Col span={10}><h3>ID :</h3></Col>
       <Col span={10}><h3>{singleproduct.id}</h3></Col>
       <Col span={4}></Col>
-
-      
     </Row> 
-    <Row>
-    <Col span={4}></Col>
-      <Col span={5}><h3> PRODUCT NAME </h3></Col>
-      <Col span={4}><h3>:</h3></Col>
+<hr></hr>
+
+<Row style={{backgroundColor:'aliceblue',fontSize:'large'}}>    <Col span={4}></Col>
+      <Col span={10}><h3> PRODUCT NAME : </h3></Col>
       <Col span={10}><h3>{singleproduct.productname}</h3></Col>
       <Col span={4}></Col>
 
-      
     </Row>  
-    <Row>
-    <Col span={4}></Col>
-      <Col span={5}><h3>PRICE </h3></Col>
-      <Col span={4}><h3>:</h3></Col>
+    <hr></hr>
+
+    <Row style={{backgroundColor:'aliceblue',fontSize:'large'}}>    <Col span={4}></Col>
+      <Col span={10}><h3>PRICE :</h3></Col>
       <Col span={10}><h3>{singleproduct.price}</h3></Col>
       <Col span={4}></Col>
-
-      
     </Row> 
-    <Row>
-    <Col span={4}></Col>
-      <Col span={5}><h3>DESCRIPTION </h3></Col>
-      <Col span={4}><h3>:</h3></Col>
+    <hr></hr>
+
+ <Row style={{backgroundColor:'aliceblue',fontSize:'large'}}> 
+ <Col span={4}></Col>
+      <Col span={10}><h3>DESCRIPTION :</h3></Col>
       <Col span={10}><h3>{singleproduct.description}</h3></Col>
       <Col span={4}></Col>
 
-      
     </Row> 
     
-    
+    <hr></hr>
      
-                <Row>
-                <Col span={4}></Col>
-                  <Col span={5}><h3>COLORS </h3></Col>
-                  <Col span={4}><h3>:</h3></Col>
-                    
-          
+    <Row style={{backgroundColor:'aliceblue',fontSize:'large'}}>   
+     <Col span={4}></Col>
+                  <Col span={10}><h3>COLORS </h3></Col>
+
                   <Col span={10}>
                   {
           singleproduct.colors.map(color => {
@@ -133,14 +123,15 @@ console.log("ddd", singleproduct)
                      </Col>
             <Col span={4}></Col>
             
-                  
-                </Row> 
+    </Row> 
+    <hr></hr>
 
-                <Row>
-    <Col span={4}></Col>
-      <Col span={5}><h3>CATEGORY </h3></Col>
-      <Col span={4}><h3>:</h3></Col>
-      <Col span={10}>  {
+
+    <Row style={{backgroundColor:'aliceblue',fontSize:'large'}}>   
+   
+                <Col span={4}></Col>
+      <Col span={10}><h3>CATEGORY :</h3></Col>
+      <Col span={10}><h3> {
           singleproduct.category.map(cate => {
              return ( 
             <Tag color={productcolors[cate]}>
@@ -148,39 +139,41 @@ console.log("ddd", singleproduct)
 
             </Tag>
     
-                    )} )} 
-                    </Col>
+                    )} )} </h3></Col>
+
       <Col span={4}></Col>
 
-      
     </Row> 
+    <hr></hr>
 
-    <Row>
+
+    <Row style={{backgroundColor:'aliceblue',fontSize:'large'}}>   
+  
     <Col span={4}></Col>
-      <Col span={5}><h3>STATUS </h3></Col>
-      <Col span={4}><h3>:</h3></Col>
+      <Col span={10}><h3>STATUS :</h3></Col>
       <Col span={10}><h3>{singleproduct.status}</h3></Col>
       <Col span={4}></Col>
 
-      
     </Row> 
-    <Row>
-    <Col span={4}></Col>
-      <Col span={5}><h3>QUANTITY </h3></Col>
-      <Col span={4}><h3>:</h3></Col>
+
+    <hr></hr>
+
+
+    <Row style={{backgroundColor:'aliceblue',fontSize:'large'}}>   
+
+<Col span={4}></Col>
+      <Col span={10}><h3>QUANTITY :</h3></Col>
       <Col span={10}><h3>{singleproduct.quantity}</h3></Col>
       <Col span={4}></Col>
-
-      
     </Row> 
+
+    </Card>
             
-            
-             
             
    
-   
-        
+  
         </Content>
+       
       </Layout>
     
   )
