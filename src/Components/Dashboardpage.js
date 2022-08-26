@@ -1,12 +1,12 @@
 import React from 'react'
-import { Layout,Button } from 'antd';
+import { Layout,Button,Col } from 'antd';
 import "antd/dist/antd.css";
 import {  PlusCircleOutlined } from '@ant-design/icons';
 import Dashboardnav from './Dashboardnav'
 import Dashboardsider from './Dashboardsider';
 import Productslist from './Productslist';
 import { useNavigate } from "react-router-dom";
-const { Header,Content, Sider } = Layout;
+const { Header,Content, Footer } = Layout;
 
 function Dashboardpage() {
   const navigate = useNavigate();
@@ -15,7 +15,7 @@ function Dashboardpage() {
     navigate("/addproductpage");
   };
   return (
-    <div><Layout className="layout"> 
+    <div ><Layout > 
     <Header>
       <div className="logo" />
       
@@ -24,16 +24,19 @@ function Dashboardpage() {
     </Layout>
    
     <Layout >
-    <Content  
-         >
+    <Content className='home' 
+       style={{paddingBottom:210}}  >
             
-        <Button type="yellow"  style={{color:'purple',  borderRadius: 50}}  onClick={addproduct}   >
+           <Col span={12} offset={22}>  <Button   style={{color:'black',  borderRadius: 50,marginTop:30,marginBottom:20,backgroundColor:'rgb(182,225,247)'}}  onClick={addproduct}   >
         <PlusCircleOutlined />
         Add Product    
-</Button>
+</Button> </Col>
       <Productslist /> 
     </Content>
-    </Layout></div>
+    </Layout>
+
+    
+    </div>
   )
 }
 

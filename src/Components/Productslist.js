@@ -1,10 +1,11 @@
 import React from 'react'
-import { ReadOutlined, BorderOutlined,CloudFilled} from '@ant-design/icons';
+import { ReadOutlined, InfoCircleTwoTone,CloudFilled} from '@ant-design/icons';
 import "antd/dist/antd.css";
-import { Button, Table,Layout,Row,Col } from "antd";
+import { Button, Table,Layout,} from "antd";
 import { Link } from "react-router-dom";
 import { useContext } from 'react'
 import { ProductContext } from '../App';
+import { hover } from '@testing-library/user-event/dist/hover';
 
 const { Content } = Layout;
 
@@ -66,7 +67,7 @@ function Productslist() {
         <>
       {
       <Link to={{ pathname: `/productsdetails/${productlists.id}` }}>
-           <Button key={id-1}>Product Details</Button>
+           <Button  key={id-1}  hoverable style={{color:'white',backgroundColor:'rgb(0,21,41)',borderRadius:'10px',fontSize:'medium',paddingBottom:30}}> <InfoCircleTwoTone  style={{fontSize:'medium'}}/>Product Details</Button>
        
 </Link>
     }
@@ -77,16 +78,15 @@ function Productslist() {
  
 
   return (
-    <div>
+     
+    <div >
 
       
          
         <Layout >
-            <Content   
-              
-         >
+            <Content >
            
-        <Table columns={columns} dataSource={productlists} bordered
+        <Table columns={columns}   dataSource={productlists} bordered
       summary={() => (
         <Table.Summary fixed>
           <Table.Summary.Row >

@@ -1,5 +1,5 @@
 import { Button, Form, Input,message, Radio,Modal} from "antd";
-import { Checkbox,Layout,Row,Col  } from 'antd';
+import { Checkbox,Layout,Row,Col,Card  } from 'antd';
 import React from 'react'
 import { useContext,useState } from 'react'
 import { ProductContext } from '../App';
@@ -37,14 +37,18 @@ setProductLists([...productlists,values])
       const [form] = Form.useForm();
   
   return (
-    <div>
+    <div >
         <>
       
-        
+        <Layout>
+          
+          <Content className="home" style={{marginLeft:'-180px',marginRight:'-160px'}}>
+         
+          
           <Form form={form} onFinish={onFinish}
             name="useform"  
             labelCol={{
-              span: 4,
+              span: 6,
             }}
             wrapperCol={{
               span: 14,
@@ -53,31 +57,36 @@ setProductLists([...productlists,values])
           
             colon={false}
             
+            className='home'
+            style={{marginTop:'50px',padding:'50px',paddingBottom:'250px'}}
 
           >
-            <Form.Item label="id" name="id"   >
-              <Input placeholder="id" required></Input>
+
+
+            <Card title='NEW PRODUCT' style={{borderRadius:50,padding:40}}>
+            <Form.Item label="ID" name="id"   >
+              <Input placeholder="id" required  style={{borderRadius:30}}></Input>
 
             </Form.Item>
-            <Form.Item label="productname" name="productname" >
-              <Input placeholder="productname" required></Input>
+            <Form.Item label="Productname" name="productname" >
+              <Input placeholder="productname" required  style={{borderRadius:30}}></Input>
 
             </Form.Item>
-            <Form.Item label="price" name="price" >
-              <Input placeholder="price" required></Input>
+            <Form.Item label="Price" name="price" >
+              <Input placeholder="price" required style={{borderRadius:30}}></Input>
 
             </Form.Item>
-            <Form.Item label="description" name="description" >
-              <Input placeholder="description" required></Input>
+            <Form.Item label="Description" name="description" >
+              <Input placeholder="description" required style={{borderRadius:30}}></Input>
 
             </Form.Item>
             
 
-            <Form.Item label="colors" name="colors" >
+            <Form.Item label="Colors" name="colors" >
             <CheckboxGroup options={options}  />
             </Form.Item>
 
-            <Form.Item label="category" name="category" >
+            <Form.Item label="Category" name="category" >
             {(
             <RadioGroup>
               <Radio value="Mens">Mens</Radio>
@@ -91,7 +100,7 @@ setProductLists([...productlists,values])
 
             
            
-            <Form.Item label="status" name="status" >
+            <Form.Item label="Status" name="status" >
             {(
             <RadioGroup>
               <Radio value="available">available</Radio>
@@ -101,8 +110,8 @@ setProductLists([...productlists,values])
           )}
 
             </Form.Item>
-            <Form.Item label="quantity" name="quantity" >
-              <Input placeholder="quantity" required></Input> 
+            <Form.Item label="Quantity" name="quantity" >
+              <Input placeholder="quantity" required  style={{borderRadius:30}}></Input> 
 
             </Form.Item>
             <Form.Item label=" " >
@@ -112,9 +121,10 @@ setProductLists([...productlists,values])
 
 
             </Form.Item>
+            </Card>
           </Form>
-         
-         
+          </Content>
+          </Layout>
           </>
 
     </div>

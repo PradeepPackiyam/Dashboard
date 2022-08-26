@@ -1,6 +1,8 @@
 import React from 'react'
 import { Layout, Card,Row,Col } from 'antd';
 import "antd/dist/antd.css";
+import { Link } from 'react-router-dom';
+
 
 
 const { Meta } = Card;
@@ -18,26 +20,20 @@ const Cards = () => {
   return (
 
     <div className='content'>
+      
       <Row>
       <Col span={8}></Col>
-      <Col span={8}><h1 style={{fontFamily:'verdana',fontSize:"50px"}} >Our Offers Below!</h1></Col>
+      <Col span={8}><h1 style={{fontFamily:'verdana',fontSize:"xxx-large",color:'white',marginTop:'100px',backgroundColor:'rgb(0,21,41)',borderRadius:30,textAlign:'center'}} >Our Offers Below!</h1></Col>
       <Col span={8}></Col>
 
       
     </Row>  
-    
+   
 
 
 <Content>
-<Row
-      gutter={{
-        xs: 8,
-        sm: 16,
-        md: 24,
-        lg: 32,
-      }}
-    >
-      <Col className="gutter-row" span={6}>
+<Row justify="space-evenly">
+       <Col span={4}>
         <div>
 
         <Content>
@@ -51,7 +47,7 @@ const Cards = () => {
     }}
     cover={<img alt="example" src="https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg" />}
   >
-    <Meta title="Create Your own app" description="www.instagram.com" />
+    <Meta title="Create Your own app" description="www.instagram.com"/>
   </Card>
   </Content>
         </div>
@@ -59,7 +55,7 @@ const Cards = () => {
 
 
 
-      <Col className="gutter-row" span={6}>
+    <Col span={4}>
         <div>
 
         <Card
@@ -85,7 +81,7 @@ const Cards = () => {
 
 
 
-      <Col className="gutter-row" span={6}>
+      <Col span={4}>
         <div >
 
         <Card
@@ -113,7 +109,7 @@ const Cards = () => {
 
 
 
-      <Col className="gutter-row" span={6}>
+      <Col span={4}>
         <div>
 
         <Card

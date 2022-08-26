@@ -24,7 +24,7 @@ function App() {
       productname: "Adidas Running Shoes",
       price: "8999",
       description: "Fluo Adidas Running Shoes For Men.Great Everyday Shoes For Runners To Go That Extra Mile. ",
-      colors: ['1','0', '2'],
+      colors: ['1','0','2'],
       category: "men",
       status: "available",
       quantity: "10"
