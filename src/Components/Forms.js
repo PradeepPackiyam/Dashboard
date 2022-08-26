@@ -54,9 +54,21 @@ function Forms() {
       <Form.Item
         label="Password"
         name="password"
-        rules={[{ required: true, message: 'Please input your password!' }]}
+        rules={[{ required: true },
+        () => ({
+          validator(_, value) {
+            if (value.length  >= 8) {
+              return Promise.resolve();
+            }
+
+            return Promise.reject(new Error('The two passwords that you entered do not match!'));
+          },
+        })
+      ]}
+        
         hasFeedback
         >
+          
         <Input.Password   placeholder="enter your password"  style={{borderRadius:30,fontSize:'x-large'}}/>
       </Form.Item>
 

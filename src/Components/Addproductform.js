@@ -1,5 +1,5 @@
 import { Button, Form, Input,message, Radio,Modal} from "antd";
-import { Checkbox,Layout,Row,Col  } from 'antd';
+import { Checkbox,Layout,Row,Col,Select, InputNumber  } from 'antd';
 import React from 'react'
 import { useContext,useState } from 'react'
 import { ProductContext } from '../App';
@@ -14,27 +14,54 @@ const RadioGroup = Radio.Group;
 function Addproductform() {
   const { Content } = Layout;
 
-  const {productlists,setProductLists} = useContext(ProductContext);
+  const {productlists,setProductLists,productcategory,value, setValue} = useContext(ProductContext);
 
     const onFinish = (values) => {
-        console.log(values)
-     const newproducts = [...productlists,values];
+        console.log("category", values)
+        const keys=productlists.length+1;
+     const newproducts ={
+      id:keys,
+      productname:values.productname,
+      price:values.price,
+      description:values.description,
+      colors: values.colors,
+      category:values.category,
+      status:values.status,
+      quantity:values.quantity,
+      key:keys
+     }
 //  console.log("pppppdd", productlists)
 // console.log("dddddd", newproducts)
-setProductLists([...productlists,values])
- console.log("pppppdd", productlists)
+setProductLists([...productlists,newproducts])
+ console.log("pppppdd", newproducts)
+ message.success('Processing complete!')
     }
     
     
     
       const options = [
-        { label: '#0088FE', value: '0' },
-        { label: '#00C49F', value: '1' },
-        { label: '#FFBB28', value: '2' },
-        { label: '#FF804', value: '3' },
+        { label: 'Blue', value: '0' },
+        { label: 'Green', value: '1' },
+        { label: 'Yellow', value: '2' },
+        { label: 'Orange', value: '3' },
+        { label: 'Geek_blue', value: '4' },
+        { label: 'Purple', value: '5' },
+        { label: 'Magenta', value: '6' },
+        { label: 'Gray', value: '7' },
+        { label: 'Lime', value: '8' },
+        { label: 'Cyan', value: '9' },
+        { label: 'Gold', value: '10' },
+      
       ];
-
+      
+      const  plainOptions = [
+        { label: 'Mens', value: '0' },
+        { label: 'Womens', value: '1' },
+        { label: 'Kids', value: '2' },
+        { label: 'Others', value: '3' },
+      ];
       const [form] = Form.useForm();
+      
   
   return (
     <div>
@@ -55,35 +82,48 @@ setProductLists([...productlists,values])
             
 
           >
-            <Form.Item label="id" name="id"   >
-              <Input placeholder="id" required></Input>
-
-            </Form.Item>
-            <Form.Item label="productname" name="productname" >
+            
+            <Form.Item label="productname" name="productname"
+             rules={[{ required: true, message: 'Please input productname ' }]}
+              >
               <Input placeholder="productname" required></Input>
 
             </Form.Item>
-            <Form.Item label="price" name="price" >
-              <Input placeholder="price" required></Input>
+            <Form.Item label="price" name="price"
+             rules={[{ required: true, message: 'Please input price' }]} >
+            <InputNumber
+    
+      min={1}
+      max={10000}
+      formatter={(value) => ` ${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
+      parser={(value) => value.replace(/\$\s?|(,*)/g, '')}
+      
+    />
 
             </Form.Item>
-            <Form.Item label="description" name="description" >
+            <Form.Item label="description" name="description"
+             rules={[{ required: true, message: 'Please input the product description' }]} >
               <Input placeholder="description" required></Input>
 
             </Form.Item>
             
 
-            <Form.Item label="colors" name="colors" >
-            <CheckboxGroup options={options}  />
+            <Form.Item label="colors" name="colors"
+             rules={[{ required: true, message: 'Please input productcolors' }]} >
+            <Select
+    mode="multiple"
+    showArrow
+   
+    style={{ width: '100%' }}
+    options={options}
+  />
             </Form.Item>
 
-            <Form.Item label="category" name="category" >
+            <Form.Item label="category" name="category"
+             rules={[{ required: true, message: 'Please input category ' }]} >
             {(
-            <RadioGroup>
-              <Radio value="Mens">Mens</Radio>
-              <Radio value="womens">womens</Radio>
-              <Radio value="Kids">Kids</Radio>
-            </RadioGroup>
+               <Checkbox.Group options={plainOptions}  />
+
           )}
 
             </Form.Item>
@@ -91,7 +131,8 @@ setProductLists([...productlists,values])
 
             
            
-            <Form.Item label="status" name="status" >
+            <Form.Item label="status" name="status" 
+             rules={[{ required: true, message: 'Please input productstatus ' }]}>
             {(
             <RadioGroup>
               <Radio value="available">available</Radio>
@@ -101,17 +142,25 @@ setProductLists([...productlists,values])
           )}
 
             </Form.Item>
-            <Form.Item label="quantity" name="quantity" >
-              <Input placeholder="quantity" required></Input> 
-
+            <Form.Item label="quantity" name="quantity" 
+             rules={[{ required: true, message: 'Please enter the quantity of the product ' }]}>
+            <InputNumber
+    
+    min={0}
+    max={10000}
+    formatter={(value) => ` ${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
+    parser={(value) => value.replace(/\$\s?|(,*)/g, '')}
+    
+  />
             </Form.Item>
+            
             <Form.Item label=" " >
              
-              <Button flex type="primary" htmlType="onChange"  onClick={() => message.success('Processing complete!')} >Submit</Button>
-             
+             <Button flex type="primary" htmlType="onChange"   >Submit</Button>
+            
 
 
-            </Form.Item>
+           </Form.Item>
           </Form>
          
          
