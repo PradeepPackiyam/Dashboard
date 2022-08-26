@@ -1,7 +1,7 @@
-import { Layout,Menu } from 'antd';
+import { Layout,Menu, Space } from 'antd';
 import { ReadOutlined, BorderOutlined, CloudFilled } from '@ant-design/icons';
 import React from 'react'
-import { Button, Table } from "antd";
+import { Button, Table,Tag } from "antd";
 import { useContext } from 'react'
 import { useParams } from 'react-router-dom';
 import Dashboardnav from './Dashboardnav';
@@ -15,17 +15,19 @@ const { Header,Content } = Layout;
 
 
 function Productsdetails() {
-    const {productlists,setProductlists, productcolors, setProductcolors} = useContext(ProductContext);
+    const {productlists,setProductlists, productcolors,productcategory} = useContext(ProductContext);
     
-    const {id} = useParams();
+    const {key} = useParams();
   
     
-      console.log("id product",productlists[id])
+      console.log("id product",productlists[key])
 
-const singleproduct =productlists[id-1];
+const singleproduct =productlists[key-1];
 
 console.log("ddd", singleproduct)
       const navigate = useNavigate();
+      
+
   return (
    
 <Layout>
@@ -138,7 +140,16 @@ console.log("ddd", singleproduct)
     <Col span={4}></Col>
       <Col span={5}><h3>CATEGORY </h3></Col>
       <Col span={4}><h3>:</h3></Col>
-      <Col span={10}><h3>{singleproduct.category}</h3></Col>
+      <Col span={10}>  {
+          singleproduct.category.map(cate => {
+             return ( 
+            <Tag color={productcolors[cate]}>
+             { productcategory[cate] } 
+
+            </Tag>
+    
+                    )} )} 
+                    </Col>
       <Col span={4}></Col>
 
       

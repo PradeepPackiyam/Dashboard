@@ -31,9 +31,14 @@ function Productslist() {
       dataIndex: 'price',
 
     },
-
     {
       key: '3',
+      title: 'productname',
+      dataIndex: 'productname',
+
+    },
+    {
+      key: '4',
       title: 'colors',
       dataIndex: 'colors',
 
@@ -51,7 +56,7 @@ function Productslist() {
       ),
     },
     {
-      key: '4',
+      key: '5',
       title: 'description',
       dataIndex: 'description',
 
@@ -59,14 +64,14 @@ function Productslist() {
     },
 
     {
-      key: '5',
+      key: '6',
       title: 'productDetails',
       dataIndex: 'productDetails',
       render:(id, productlists) => (
         <>
       {
-      <Link to={{ pathname: `/productsdetails/${productlists.id}` }}>
-           <Button key={id-1}>Product Details</Button>
+      <Link to={{ pathname: `/productsdetails/${productlists.key}` }}>
+           <Button key={productlists.key}>Product Details</Button>
        
 </Link>
     }
