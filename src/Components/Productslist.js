@@ -72,9 +72,9 @@ function Productslist() {
         <>
       {
 
-      <Link to={{ pathname: `/productsdetails/${productlists.key}` }}>
-           <Button key={productlists.key}>Product Details</Button>
-
+    
+<Link to={{ pathname: `/productsdetails/${productlists.key}` }}>
+           <Button  key={productlists.key}  hoverable style={{color:'white',backgroundColor:'rgb(0,21,41)',borderRadius:'10px',fontSize:'medium',paddingBottom:30}}> <InfoCircleTwoTone  style={{fontSize:'medium'}}/>Product Details</Button>
        
 </Link>
     }
@@ -86,11 +86,11 @@ function Productslist() {
 
   return (
      
-    <div >
+    <div style={{marginBottom:'-750px'}} >
 
       
          
-        <Layout >
+        <Layout className="layout">
             <Content >
            
         <Table columns={columns}   dataSource={productlists} bordered

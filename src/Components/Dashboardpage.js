@@ -17,7 +17,7 @@ function Dashboardpage() {
   return (
     <div ><Layout > 
     <Header>
-      <div className="logo" />
+      
       
       <Dashboardnav />
     </Header>
@@ -34,6 +34,7 @@ function Dashboardpage() {
       <Productslist /> 
     </Content>
     </Layout>
+   
 
     
     </div>

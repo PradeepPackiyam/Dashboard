@@ -30,7 +30,7 @@ console.log("ddd", singleproduct)
 
   return (
    
-<Layout >
+<Layout  style={{marginBottom:'-750px'}}>
 <Header>
 
       <Menu
@@ -66,7 +66,7 @@ console.log("ddd", singleproduct)
   
     </Header>
     
-        <Content className='home' >
+        <Content className='home' style={{paddingBottom:110}}>
         <Row>
       <Col span={8}></Col>
       <Col span={8}><h1 style={{fontFamily:'verdana',fontSize:"xxx-large",color:'white',marginTop:'50px',backgroundColor:'rgb(0,21,41)',borderRadius:30,textAlign:'center'}} >Product Details</h1></Col>

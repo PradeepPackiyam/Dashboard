@@ -15,7 +15,7 @@ function Login() {
       <Nav />
      </Header>
 
-    <Content className='home'>
+    <Content className='home' style={{marginBottom:'-750px'}}>
     <Row justify="space-justify"  >
       
       <Col span={12} offset={6}>  

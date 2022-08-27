@@ -31,7 +31,7 @@ function Forms() {
  
      
       
-      <Form style={{paddingTop:80,marginBottom:'100%'}}
+      <Form style={{paddingTop:80}}
       name="basic"
       labelCol={{ span: 8 }}
       wrapperCol={{ span: 16 }}

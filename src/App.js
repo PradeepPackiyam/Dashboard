@@ -22,7 +22,7 @@ function App() {
   const [ value, setValue] = useState();
   const [productlists, setProductLists] = useState([
     {
-      id: "1",
+      id: 1,
       productname: "Adidas Running Shoes",
       price: 8999,
       description: "Fluo Adidas Running Shoes For Men.Great Everyday Shoes For Runners To Go That Extra Mile. ",
