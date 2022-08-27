@@ -1,6 +1,6 @@
 import { Button, Form, Input,message, Radio,Modal} from "antd";
 
-import { Checkbox,Layout,Row,Col,Select, InputNumber  } from 'antd';
+import { Checkbox,Layout,Row,Col,Select, InputNumber,Card  } from 'antd';
 
 import React from 'react'
 import { useContext,useState } from 'react'
@@ -69,9 +69,9 @@ setProductLists([...productlists,newproducts])
     <div >
         <>
       
-        <Layout>
+        <Layout >
           
-          <Content className="home" style={{marginLeft:'-180px',marginRight:'-160px'}}>
+          <Content className="home">
          
           
           <Form form={form} onFinish={onFinish}
@@ -93,7 +93,7 @@ setProductLists([...productlists,newproducts])
 
 
 
-            <Card title='NEW PRODUCT' style={{borderRadius:50,padding:40}}>
+            <Card title='NEW PRODUCT' style={{borderRadius:50}}>
            
 
             <Form.Item label="Productname" name="productname"
@@ -116,7 +116,7 @@ rules={[{ required: true, message: 'Please input price' }]}>
              
 
             </Form.Item>
-            <Form.Item label="Description" name="description"  rules={[{ required: true, message: 'Please input the product description' }]} >>
+            <Form.Item label="Description" name="description"  rules={[{ required: true, message: 'Please input the product description' }]} >
               <Input placeholder="description" required style={{borderRadius:30}}></Input>
 
 

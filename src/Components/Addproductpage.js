@@ -9,7 +9,7 @@ import { Col, Row } from 'antd';
 const { Header,Content } = Layout;
 function Addproductpage() {
   return (
-    <div >
+    <div style={{marginBottom:'-900px'}} >
         
         
     <Layout className="layout"> 
@@ -33,13 +33,13 @@ function Addproductpage() {
 
     
 
-    <Content  
-         >
+    <Content  className='home' style={{marginBottom:'-750px'}}
+        >
             <Row>
     
-    <Col span={2}></Col>
-    <Col span={20}>  <Addproductform /> </Col>
-    <Col span={2}></Col>
+    <Col span={4}></Col>
+    <Col span={16}>  <Addproductform /> </Col>
+    <Col span={4}></Col>
    
 
     
